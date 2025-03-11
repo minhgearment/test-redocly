@@ -5,7 +5,7 @@ logo:
 
 apis:
   external@v1:
-    root: ./partner-sdk/docs/openapi.yaml
+    root: ./openapi.yaml
     labels:
       - external
 
