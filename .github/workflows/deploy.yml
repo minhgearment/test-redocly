@@ -30,7 +30,11 @@ jobs:
         run: bash ./download-openapi.sh
 
       - name: Build documentation
-        run: redocly build-docs openapi.yaml --output=./dist/index.html
+        run: |
+          mkdir -p ./dist
+          redocly build-docs openapi.yaml --output=./dist/index.html
+          echo '<meta http-equiv="refresh" content="0; url=./docs.html">' > ./dist/index.html
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
