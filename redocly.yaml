@@ -10,7 +10,7 @@ apis:
       - external
 
 feedback:
-  hidden: true
+  hide: true
 
 mockServer:
   position: 'off'

@@ -18,14 +18,17 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install ReDoc CLI
+      - name: Install dependencies
         run: npm install -g @redocly/cli
 
-      - name: Build ReDoc HTML
-        run: redoc-cli bundle openapi.yaml -o index.html
+      - name: Download OpenAPI spec
+        run: bash ./download-openapi.sh
+
+      - name: Build documentation
+        run: redocly build-docs openapi.yaml --output=./dist/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./dist
