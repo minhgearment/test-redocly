@@ -1,0 +1,34 @@
+logo:
+  image: ./images/gearment-api-logo.svg
+  altText: Gearment API logo
+  link: /
+
+apis:
+  external@v1:
+    root: ./partner-sdk/docs/openapi.yaml
+    labels:
+      - external
+
+feedback:
+  hidden: true
+
+mockServer:
+  position: 'off'
+
+theme:
+  openapi:
+    schemaExpansionLevel: 2
+    generateCodeSamples:
+      languages:
+        - lang: curl
+        - lang: Go
+
+colorMode:
+  ignoreDetection: true
+  modes:
+    - 'dark-contrast'
+    - 'dark'
+    - 'light'
+
+footer:
+  copyrightText: GearmentInc © 2024
